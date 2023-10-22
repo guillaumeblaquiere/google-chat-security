@@ -1,0 +1,5 @@
+# Build and deploy
+gcloud builds submit --tag gcr.io/gdglyon-cloudrun/google-chat-security
+
+# Deploy
+gcloud run deploy google-chat-security --image gcr.io/gdglyon-cloudrun/google-chat-security --region=us-central1 --platform=managed --allow-unauthenticated --set-env-vars=PROJECT_NUMBER=<project Number>
