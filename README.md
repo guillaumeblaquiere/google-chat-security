@@ -4,8 +4,11 @@ This project propose different endpoint to test and understand how to secure the
 the Cloud Run instance is deployed publicly. *Cloud Run is my preferred platform, but you can reuse this principle 
 on any endpoint, on Google Cloud or not*
 
-This [article]() 
+This [article](TODO)  
 presents is the story which use this code base to enlighten the security topic
+
+*This code is for educational purpose. It's inconsistent to have public and private endpoints for Cloud Run in the same
+container.*
 
 # General architecture
 
@@ -15,6 +18,7 @@ private Cloud Run service (no-allow-unauthenticated)
 * `/public` that checks the Bearer token in the Authorization header. This token is required and must be valid. In 
 addition, it must be signed by Google Chat and must contain, in the audience field of the JWT, the project number
 of the Google Cloud Project which has activated the Google Chat API.
+* `/log` that logs the headers and the body of any HTTP request received on the endpoint.
 
 # How to use
 
